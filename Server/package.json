@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ashleydavis/NodeJS-Skeleton/issues"
   },
-  "homepage": "https://github.com/ashleydavis/NodeJS-Skeleton"
+  "homepage": "https://github.com/ashleydavis/NodeJS-Skeleton",
+  "dependencies": {
+    "express": "^4.10.7"
+  }
 }
