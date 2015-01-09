@@ -1,0 +1,19 @@
+{
+  "name": "NodeJS-Skeleton",
+  "version": "1.0.0",
+  "description": "Nothing special, just a simple NodeJS skeleton with a static web server and all my fav modules already installed.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashleydavis/NodeJS-Skeleton"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashleydavis/NodeJS-Skeleton/issues"
+  },
+  "homepage": "https://github.com/ashleydavis/NodeJS-Skeleton"
+}
