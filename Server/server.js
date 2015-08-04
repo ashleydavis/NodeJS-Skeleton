@@ -6,6 +6,10 @@ var staticPath = path.join(__dirname, '../Client');
 console.log(staticPath);
 app.use(express.static(staticPath));
 
+process.on('uncaughtException', function (err) {
+    console.error('Uncaught Exception: ' + err.message + '\r\n' + err.stack);
+});
+
 var server = app.listen(3000, function () {
 
   var host = server.address().address
