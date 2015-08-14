@@ -5,7 +5,7 @@ LOG=./logs/provision_$D.log
 echo "============== Setting timezone =================="
 sudo timedatectl set-timezone Australia/Brisbane
 echo "============== OS Update =================="
-#todo: sudo apt-get update
+sudo apt-get update
 echo "============== Software Dependencies =================="
 sudo apt-get install -y git
 sudo apt-get install -y mercurial
