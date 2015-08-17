@@ -6,8 +6,6 @@
   },
   "author": "",
   "dependencies": {
-    "azure-api": "0.0.27",
-    "child-process-promise": "^1.1.0",
-    "q": "^1.4.1"
+    "azure-api": "0.0.27"
   }
 }
