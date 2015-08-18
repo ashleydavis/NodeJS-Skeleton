@@ -33,6 +33,7 @@ module.exports = function (log, validate) {
                 'ssh://' + vmUser + '@' + vmUrl + '/deployment',
                 '--cwd',
                 codeRepoPath,
+                '--debug'
             ];
 
             return runCmd('hg', args);
