@@ -17,6 +17,7 @@ module.exports = function (log, validate) {
             validate.config(config, 'vm-image');
             validate.config(config, 'vm-provision-script');
             validate.config(config, 'ssh-key');
+            validate.config(config, 'vm-size');
             validate.config(config, 'vm-endpoints');
         },
         
@@ -38,6 +39,7 @@ module.exports = function (log, validate) {
                 provisionScript: config.get('vm-provision-script'),
                 provisioningTemplateView: {},
                 sshCertFile: config.get('ssh-key'),
+                vmSize: config.get('vm-size'),
             };
 
             return azure.provisionVM(vm);

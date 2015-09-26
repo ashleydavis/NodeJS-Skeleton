@@ -5,6 +5,7 @@
 	"vm-name": "nodejs-skeleton",
 	"vm-user": "someuser",
 	"vm-pass": "somePassword1234!",
+	"vm-size": "Basic_A0",
 	"vm-provision-script": "./scripts/mean-stack-provision.sh",
 	"ssh-key": "../keys/your-cert.pem",
 	"code-repo": "../",
