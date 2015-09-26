@@ -8,6 +8,7 @@
 	"vm-size": "Basic_A0",
 	"vm-provision-script": "./scripts/mean-stack-provision.sh",
 	"ssh-key": "../keys/your-cert.pem",
+	"ssh-privateKey": "../keys/your-private.key",
 	"code-repo": "../",
 	"vm-endpoints": [
         {

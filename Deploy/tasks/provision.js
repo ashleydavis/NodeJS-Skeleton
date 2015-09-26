@@ -9,7 +9,7 @@ module.exports = function (log, validate) {
         dependsOn: [
             'provision-vm',
             'init-remote-repo',
-            'deploy-code',
+            'deploy-initial-code',
         ],
   };
 };

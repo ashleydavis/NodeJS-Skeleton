@@ -6,6 +6,8 @@
   },
   "author": "",
   "dependencies": {
-    "azure-api": "0.0.31"
+    "azure-api": "0.0.31",
+    "promised-del": "^1.0.2",
+    "ssh-promise": "^2.1.0"
   }
 }
