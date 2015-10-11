@@ -10,6 +10,7 @@ module.exports = function (log, validate) {
             'provision-vm',
             'init-remote-repo',
             'deploy-initial-code',
+            'smoke-test',
         ],
   };
 };
