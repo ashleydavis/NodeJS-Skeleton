@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ashleydavis/NodeJS-Skeleton",
   "dependencies": {
-    "express": "^4.10.7"
+    "express": "^4.10.7",
+    "request-promise": "^1.0.0"
   }
 }
