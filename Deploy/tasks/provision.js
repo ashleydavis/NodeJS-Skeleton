@@ -9,7 +9,6 @@ module.exports = function (log, validate) {
         dependsOn: function (config) {
         	var deps = [];
         	deps.push('provision-vm');
-    		deps.push('hg/init-deployment-repo');
 
         	var deploySource = config.get('deploy-source');
 
@@ -20,6 +19,7 @@ module.exports = function (log, validate) {
         	log.verbose('Deploying from ' + deploySource);
 
         	if (deploySource === 'hg-local') {
+	    		deps.push('hg/init-deployment-repo');
         		deps.push('hg/local/deploy-initial');
         	}
         	else if (deploySource === 'git-remote') {
