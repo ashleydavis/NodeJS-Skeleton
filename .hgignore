@@ -1,3 +1,0 @@
-syntax: glob
-.git/
-node_modules/
