@@ -6,11 +6,31 @@ module.exports = function (log, validate) {
         
         description: "Provision VM and deploy code",
         
-        dependsOn: [
-            'provision-vm',
-            'hg/init-deployment-repo',
-            'hg/local/deploy-initial',
-            'smoke-test',
-        ],
+        dependsOn: function (config) {
+        	var deps = [];
+        	deps.push('provision-vm');
+    		deps.push('hg/init-deployment-repo');
+
+        	var deploySource = config.get('deploy-source');
+
+        	if (!deploySource) {
+        		throw new Error("'deploy-source' is not defined in config or on command-line.");
+        	}
+
+        	log.verbose('Deploying from ' + deploySource);
+
+        	if (deploySource === 'hg-local') {
+        		deps.push('hg/local/deploy-initial');
+        	}
+        	else if (deploySource === 'git-remote') {
+        		deps.push('git/remote/deploy-initial');
+        	}
+        	else {
+        		throw new Error('Unrecognised deployment source: ' + deploySource);
+        	}
+
+        	deps.push('smoke-test');
+	        return deps;
+	    },
   };
 };

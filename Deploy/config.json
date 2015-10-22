@@ -9,10 +9,16 @@
 	"vm-provision-script": "./scripts/mean-stack-provision.sh",
 	"ssh-key": "../keys/your-cert.pem",
 	"ssh-privateKey": "../keys/your-private.key",
+	"deploy-source": "hg-local",
 	"deploy": {
 		"hg": {
 			"local": {
 				"code-repo": "../"
+			}
+		},
+		"git": {
+			"remote": {
+				"code-repo": "https://github.com/ashleydavis/NodeJS-Skeleton.git"
 			}
 		}
 	},
