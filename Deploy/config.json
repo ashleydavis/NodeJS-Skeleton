@@ -9,7 +9,13 @@
 	"vm-provision-script": "./scripts/mean-stack-provision.sh",
 	"ssh-key": "../keys/your-cert.pem",
 	"ssh-privateKey": "../keys/your-private.key",
-	"code-repo": "../",
+	"deploy": {
+		"hg": {
+			"local": {
+				"code-repo": "../"
+			}
+		}
+	},
 	"vm-endpoints": [
         {
             "name": "HTTP",

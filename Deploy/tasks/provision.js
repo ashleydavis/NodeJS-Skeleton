@@ -8,8 +8,8 @@ module.exports = function (log, validate) {
         
         dependsOn: [
             'provision-vm',
-            'init-remote-repo',
-            'deploy-initial-code',
+            'hg/init-deployment-repo',
+            'hg/local/deploy-initial',
             'smoke-test',
         ],
   };
