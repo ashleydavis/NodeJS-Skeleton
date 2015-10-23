@@ -51,6 +51,10 @@ module.exports = function (log, validate) {
                     return ssh.exec("cd ~/deployment && hg unbundle ../bundle.hg");
                 })
                 .then(function () {
+                    // Update on the remote machine.
+                    return ssh.exec("cd ~/deployment && hg update");
+                })
+                .then(function () {
                     // Delete the bundle on the remote machine.
                     return ssh.exec("rm ./bundle.hg");
                 })
