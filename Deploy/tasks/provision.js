@@ -22,6 +22,9 @@ module.exports = function (log, validate) {
 	    		deps.push('hg/init-deployment-repo');
         		deps.push('hg/local/deploy-initial');
         	}
+        	else if (deploySource === 'hg-remote') {
+        		deps.push('hg/remote/deploy-initial');
+        	}
         	else if (deploySource === 'git-remote') {
         		deps.push('git/remote/deploy-initial');
         	}

@@ -14,6 +14,9 @@
 		"hg": {
 			"local": {
 				"code-repo": "../"
+			},
+			"remote": {
+				"code-repo": "https://bitbucket.org/ashleydavis75/nodejs-skeleton"				
 			}
 		},
 		"git": {
