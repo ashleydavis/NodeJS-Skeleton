@@ -24,6 +24,7 @@ module.exports = function (log, validate) {
         	}
         	else if (deploySource === 'git-remote') {
         		deps.push('git/remote/deploy-initial');
+        		deps.push('start-server');
         	}
         	else {
         		throw new Error('Unrecognised deployment source: ' + deploySource);
