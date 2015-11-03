@@ -34,6 +34,8 @@ module.exports = function (log, validate) {
 
     		deps.push('start-server');
         	deps.push('smoke-test');
+            deps.push('restart-vm');
+            deps.push('restart-test');
 	        return deps;
 	    },
   };
