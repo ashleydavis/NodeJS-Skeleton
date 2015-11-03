@@ -19,7 +19,7 @@ module.exports = function (log, validate) {
         	log.verbose('Deploying from ' + deploySource);
 
         	if (deploySource === 'hg-local') {
-	    		deps.push('hg/init-deployment-repo');
+	    		deps.push('hg/local/init-deployment-repo');
         		deps.push('hg/local/deploy-initial');
         	}
         	else if (deploySource === 'hg-remote') {
