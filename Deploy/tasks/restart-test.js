@@ -11,6 +11,12 @@ module.exports = function (log, validate) {
     var delayBetweenRequests = 1000;
 
     //
+    // Wait a minute before starting the check.
+    // The restart needs time to start happening.
+    //
+    var startDelay = 60000; // 1 minute.
+
+    //
     // Amount of time before the restart test is considered failed if no response has been received.
     //
     var failureTimeOut = 300000; // 5 minutes.
@@ -65,12 +71,15 @@ module.exports = function (log, validate) {
             var url = 'http://' + config.get('dns-name') + '.cloudapp.net';
             var isAliveUrl = url + "/is-alive";
 
-            return Promise.race([
-                requestUntilSuccessful(isAliveUrl),
-                sleep(failureTimeOut).then(function () {
-                    throw new Error("Restart test failed due to timeout.");
-                })
-            ]);
+            return sleep(startDelay) // Wait for a bit before starting the test.
+                .then(function () {
+                    return Promise.race([
+                        requestUntilSuccessful(isAliveUrl),
+                        sleep(failureTimeOut).then(function () {
+                            throw new Error("Restart test failed due to timeout.");
+                        })
+                    });
+                });
         },
     };
 };
