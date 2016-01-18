@@ -22,5 +22,3 @@ sudo apt-get install -y nodejs
 echo "============== Nodejs packages =================="
 sudo npm install -g -y forever
 sudo npm install -g -y bower
-echo "============== Install upstart service =================="
-sudo cp ~/deployment/Deploy/scripts/nodejs-skeleton.conf /etc/init/nodejs-skeleton.conf

@@ -32,6 +32,7 @@ module.exports = function (log, validate) {
         		throw new Error('Unrecognised deployment source: ' + deploySource);
         	}
 
+            deps.push('install-server');
     		deps.push('start-server');
         	deps.push('smoke-test');
             deps.push('restart-vm');
