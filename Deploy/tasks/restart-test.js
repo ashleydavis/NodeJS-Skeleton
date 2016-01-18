@@ -78,7 +78,7 @@ module.exports = function (log, validate) {
                         sleep(failureTimeOut).then(function () {
                             throw new Error("Restart test failed due to timeout.");
                         })
-                    });
+                    ]);
                 });
         },
     };
