@@ -19,7 +19,7 @@ module.exports = function (log, validate) {
             var user = config.get('vm-user');
             var pass = config.get('vm-pass');
 
-            return azure.runProvisioningScripts(host, user, pass, './scripts/start-server.sh');
+            return azure.runProvisioningScripts(host, user, pass, './scripts/start-prod-server.sh');
         },
     };
 };
