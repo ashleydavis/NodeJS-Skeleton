@@ -11,13 +11,14 @@
     "url": "https://github.com/ashleydavis/NodeJS-Skeleton"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ashleydavis/NodeJS-Skeleton/issues"
   },
   "homepage": "https://github.com/ashleydavis/NodeJS-Skeleton",
   "dependencies": {
-    "express": "^4.10.7",
-    "request-promise": "^1.0.0"
+    "express": "^4.16.2",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   }
 }
