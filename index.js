@@ -9,7 +9,7 @@ var request = require('request-promise');
 var startServer = function (done) {
 var app = express();
 
-var staticPath = path.join(__dirname, '../Client');
+var staticPath = path.join(__dirname, 'client');
 console.log(staticPath);
 app.use(express.static(staticPath));
 
@@ -17,31 +17,31 @@ process.on('uncaughtException', function (err) {
     console.error('Uncaught Exception: ' + err.message + '\r\n' + err.stack);
 });
 
-	app.get('/is-alive', function (req, res) {
-		res.status(200).end();
-	});
+app.get('/is-alive', function (req, res) {
+	res.status(200).end();
+});
 
-	app.get('/example-rest-api', function (req, res) {
-		res.json({ hello: 'computer'});
-	});
+app.get('/example-rest-api', function (req, res) {
+	res.json({ hello: 'computer'});
+});
 
-	var requestJson = function (url) {
-		return request(url)
-			.then(function (data) {
-				return JSON.parse(data);
-			});
-	};
+var requestJson = function (url) {
+	return request(url)
+		.then(function (data) {
+			return JSON.parse(data);
+		});
+};
 
-	app.get('/forwarded-rest-api', function (req, res) {
-		requestJson("http://somewhere-else.com/some-rest-api")
-			.then(function (result) {
-				res.json(result);
-			})
-			.catch(function (err) {
-				console.error(err.stack);
-				res.status(500).end();
-			});
-	});
+app.get('/forwarded-rest-api', function (req, res) {
+	requestJson("http://somewhere-else.com/some-rest-api")
+		.then(function (result) {
+			res.json(result);
+		})
+		.catch(function (err) {
+			console.error(err.stack);
+			res.status(500).end();
+		});
+});
 
 var server = app.listen(3000, function () {
 
